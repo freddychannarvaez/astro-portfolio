@@ -1,0 +1,85 @@
+---
+interface Props {
+  title: string;
+  description: string[];
+}
+
+const { title, description } = Astro.props;
+---
+
+<section id="about">
+  <div class="icon-title">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgUser"
+      aria-hidden="true"
+      ><path
+        d="M12 3a3.5 3.5 0 11-2.475 1.025A3.493 3.493 0 0112 3zm6.2 18a9.257 9.257 0 00-1.825-5.65A5.593 5.593 0 0012 13h0a5.593 5.593 0 00-4.375 2.35A9.257 9.257 0 005.8 21h12.4z"
+      ></path></svg
+    >
+    <h2>{title}</h2>
+  </div>
+  <div class="content">
+    <div class="description">
+      {
+        description.map((item) => (
+          <p>{item}</p>
+        ))
+      }
+    </div>
+    <div class="img">
+      <img src="/profile_picture.avif">
+    </div>
+  </div>
+</section>
+<style>
+  section {
+    margin: 0 15%;
+  }
+  .icon-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 20px;
+    h2 {
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    /* align-items: start; */
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+  .description {
+    width: 500px;
+    max-width: 80%;
+    p {
+      width: 100%;
+    }
+  }
+  .img {
+    width: 250px;
+    object-fit: cover;
+    img {
+      border: 8px solid lightgray;
+      box-shadow: 1px 1px 3px black, -1px -1px 3px black;
+      width: 100%;
+      height: 100%;
+      border-radius: 200px;
+      /* border-radius: 20px; */
+    }
+  }
+</style>

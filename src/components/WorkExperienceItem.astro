@@ -1,0 +1,86 @@
+---
+import TechPill from './TechPill.astro';
+
+interface Props {
+	company: string;
+	position: string;
+	dateRange: string;
+  description: string;
+  technologies?: any[];
+}
+
+const { company, position, dateRange, description, technologies } = Astro.props;
+
+---
+<article class="item-container">
+  <div class="timeline">
+    <span class="company">{company}</span>
+    <span class="position">{position}</span>
+    <span class="date-range">{dateRange}</span>
+  </div>
+  <p class="description">{description}</p>
+</article>
+<article class="pills">
+  {
+    technologies?.map((tech) => (
+      <TechPill name={tech} />
+    ))
+  }
+</article>
+<style>
+  .item-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+  }
+  .item-container:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    display: block;
+    background: black;
+    margin: 0 1em 0 -7px;
+    position: relative;
+    top: 30px;
+  }
+  .timeline {
+    display: inherit;
+    flex-direction: column;
+    justify-content: start;
+    /* justify-content: center; */
+    /* width: 300px;
+    max-width: 50%; */
+    width: 35%;
+    padding: 1em 20px;
+    box-sizing: border-box;
+    .company {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .position {
+      font-size: 20px;
+      font-weight: 600;
+      color: gray;
+    }
+    .date-range {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  .description {
+    font-size: 16px;
+    font-weight: 200;
+    width: 65%;
+    /* width: 450px;
+    max-width: 70%; */
+  }
+  .pills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 45px;
+    margin-bottom: 30px;
+  }
+  /*  */
+</style>

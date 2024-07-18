@@ -1,0 +1,50 @@
+---
+interface Props {
+	routes: any[];
+}
+
+let { routes } = Astro.props;
+---
+<section class="header">
+  {
+    routes.map((route) => (
+      <a href={route.link}>{route.title}</a>
+    ))
+  }
+</section>
+<style>
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    width: 100vw;
+    height: 64px;
+    background-color: transparent;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+  }
+  .header:hover {
+    background-color: white;
+    transition: 0.3s ease;
+
+    a {
+      box-shadow: 2px 2px 5px gray;
+      transition: 0.7s ease;
+    }
+  }
+  a {
+    border-radius: 50px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 5px 20px;
+    background-color: white;
+  }
+  a:hover {
+    transform: scale(105%);
+    box-shadow: 1px 1px 5px black !important;
+  }
+</style>

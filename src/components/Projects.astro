@@ -1,0 +1,47 @@
+---
+// interface Props {
+// 	title: string;
+// 	body: string;
+// 	href: string;
+// }
+
+// const { href, title, body } = Astro.props;
+---
+
+<section id="about">
+  <div class="icon-title">
+    <svg
+      class="size-7"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
+        d="M14 4l-4 16"></path></svg
+    >
+    <h2>Projects</h2>
+  </div>
+  <h3>Coming soon...</h3>
+</section>
+<style>
+  section {
+    margin: 50px 15%;
+  }
+  .icon-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 20px;
+    h2 {
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+import WorkExperienceItem from "./WorkExperienceItem.astro"
+
+interface Props {
+  title: string;
+  experience?: any[]
+}
+
+const { title, experience } = Astro.props;
+
+---
+
+<section id="work-experience">
+  <div class="icon-title">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgBriefcase"
+      aria-hidden="true"
+      ><path
+        d="M21 19a2.006 2.006 0 01-2 2H5a2.006 2.006 0 01-2-2v-8.793a2.006 2.006 0 012-2h14a2.006 2.006 0 012 2zM15.428 8.207V5a2.006 2.006 0 00-2-2h-2.856a2.006 2.006 0 00-2 2v3.207M3 13.62h18"
+      ></path></svg>
+    <h2>{title}</h2>
+  </div>
+  <div class="work-item">
+    {
+      experience?.map((item) => (
+        <WorkExperienceItem company={item.company} position={item.position}
+        dateRange={item.dateRange} description={item.description}
+        technologies={item.technologies}/>
+      ))
+    }
+  </div>
+</section>
+<style>
+  section {
+    margin: 0 15% 50px 15%;
+  }
+  .icon-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 20px;
+    h2 {
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+  .work-item {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: start; */
+    border-left: 1px solid black;
+  }
+
+</style>

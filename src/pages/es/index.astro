@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Overview from '../../components/Overview.astro';
+import WorkExperience from '../../components/WorkExperience.astro';
+import About from '../../components/About.astro';
+import Projects from '../../components/Projects.astro';
+
+const routes = [
+	{ title: 'Descripción', link: '#overview'},
+	{ title: 'Experiencia', link: '#experience'},
+	{ title: 'Acerca de', link: '#about'},
+	{ title: 'English', link: `${Astro.url.origin}`},
+]
+
+const overviewContent = {
+	picture: '/profile_picture.avif',
+	isAvailable: true,
+  languageCode: 'es',
+	titleHeading: `Hey, soy Freddy Chan Narvaez`,
+	description: `+7 de experiencia. Ingeniero en mecatrónica y Desarrollador de Software de México.`,
+	pills: [
+  {
+    link: `https://github.com/freddychannarvaez`,
+    icon: `/github.svg`,
+    text: `Github`
+  },
+  {
+    link: `https://linkedin.com/in/freddy-chan-narvaez`,
+    icon: `/linkedin.svg`,
+    text: `LinkedIn`
+  },
+]
+}
+const workContent = {
+	title: 'Experiencia laboral',
+	experience: [
+		{
+			company: 'Freelance',
+			position: 'Desarrollador Fullstack',
+			dateRange: 'Jul 2023 - Presente',
+			description: `Desarrollo de páginas web usando Astro. Trabajando en la integración de ERPNext. Buscando obtener la certificación AZ-204: Azure Developer.`,
+			technologies: [
+				'astro',
+				'github',
+				'react',
+				'python',
+			]
+		},
+		{
+			company: 'Accion Labs',
+			position: 'Desarrollador Fullstack',
+			dateRange: 'Jul 2022 - Jul 2023',
+			description: `Cliente de EEUU en el negocio del marketing. Reducción de las métricas de velocidad y ayuda en la transición de Waterfall a Agile. Ascenso a coordinar el equipo de desarrollo.`,
+			technologies: [
+				'react',
+				'nextjs',
+				'docker',
+				'github',
+				'githubActions',
+				'cypress',
+			]
+		},
+		{
+			company: 'Softtek',
+			position: 'Frontend Developer',
+			dateRange: 'Jul 2021 - Jul 2022',
+			description: `Cliente de EEUU en el negocio de bienes raíces. Desarrollo y mantenimiento de una plataforma web de uso interno. Trabajo usando el entorno de trabajo SCRUM. Obtención de la certificación AZ-900: Azure Fundamentals.`,
+			technologies: [
+				'angular4',
+				'jira',
+				'bitbucket',
+				'azure',
+			]
+		},
+		{
+			company: 'Freelance',
+			position: 'Desarrollador Fullstack',
+			dateRange: 'Oct 2020 - Jul 2021',
+			description: `Desarrollo de sitios web y apps usando principalmente Angular, Google Cloud Functions (Node.js) y Firebase. Creación y mejora de UI/UX.`,
+			technologies: [
+				'angular4',
+				'sass',
+				'postgresql',
+				'javascript',
+				'firebase',
+				'nodejs',
+				'gcp',
+				'php',
+			]
+		},
+		{
+			company: 'Ramm Alvarez Software Studio',
+			position: 'Desarrollador Fullstack',
+			dateRange: 'Abr 2017 - Oct 2020',
+			description: `Participación en +20 proyectos usando diferentes tecnologías. Desarrollo de web apps y páginas. Modelado de base de datos. Presentación de avances y proyectos con clientes. Creación de Rest APIs para integraciones con software existente.`,
+			technologies: [
+				'angular2',
+				'nodejs',
+				'net',
+				'mysql',
+				'gcp',
+				'firebase',
+				'azureDevops',
+			]
+		},
+	]
+}
+const aboutContent = {
+	title: 'Acerca de mí',
+	descriptions: [
+		`Mi nombre es Freddy. Convertí mi amor por las matemáticas y la resolución de problemas en el desarrollo de software. Actualmente estoy aprendiendo nuevas tecnologías para optimizar el rendimiento.`,
+		`Soy una persona entusiasta por aprender idiomas. En mi camino he aprendido inglés, francés, italiano y actualmente estoy aprendiendo holandés.`,
+	]
+}
+---
+
+<Layout title="Freddy Chan Portfolio" routes={routes}>
+	<Overview content={overviewContent}></Overview>
+	<WorkExperience title={workContent.title} experience={workContent.experience}></WorkExperience>
+	<!-- <Projects></Projects> -->
+	<About title={aboutContent.title} description={aboutContent.descriptions}></About>
+</Layout>
+
+<style is:global>
+	main {
+		margin: auto;
+		/* padding: 1rem; */
+		/* width: 800px; */
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>

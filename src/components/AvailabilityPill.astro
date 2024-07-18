@@ -1,0 +1,52 @@
+---
+interface Props {
+	isAvailable: boolean;
+  languageCode: string;
+}
+
+const { isAvailable, languageCode } = Astro.props;
+
+const textValue = () => {
+  switch(languageCode) {
+    case 'es': 
+      return isAvailable ? 'Disponible para trabajar' : 'No disponible'
+      case 'fr': 
+      return isAvailable ? 'Disponible pour travailler' : 'Unavailable'
+      default:
+        return isAvailable ? 'Available for work' : 'Unavailable'
+  }
+}
+const text = textValue
+---
+<span class={`content-pill 
+  ${isAvailable ? `isAvailable` : `isNotAvailable`}`}>
+  {text}
+</span>
+<style>
+.content-pill {
+    min-width: 150px;
+    /* max-width: 30%; */
+    height: 30px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 2px 2px 5px gray;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    color: white;
+    padding: 5px 15px;
+  }
+  .isAvailable {
+    background-color: green;
+  }
+  .isAvailable:hover {
+    box-shadow: 0 0 5px green;
+  }
+  .isNotAvailable {
+    background-color: red;
+  }
+  .isNotAvailable:hover {
+    box-shadow: 0 0 5px red;
+  }
+</style>
