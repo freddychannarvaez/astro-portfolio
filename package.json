@@ -10,8 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.11.5",
     "@astrojs/check": "^0.5.8",
+    "@fontsource-variable/noto-sans": "^5.0.5",
+    "astro": "^4.11.5",
     "typescript": "^5.2.2"
   }
 }
