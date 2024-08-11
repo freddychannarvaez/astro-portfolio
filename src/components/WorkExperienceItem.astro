@@ -48,20 +48,27 @@ const { company, position, dateRange, description, technologies } = Astro.props;
     display: inherit;
     flex-direction: column;
     justify-content: start;
-    /* justify-content: center; */
-    /* width: 300px;
-    max-width: 50%; */
     width: 35%;
     padding: 1em 20px;
     box-sizing: border-box;
+    
+    @media (width < 769px) {
+      row-gap: 10px;
+    }
     .company {
       font-size: 20px;
       font-weight: 700;
+      @media (width < 769px) {
+        font-size: 16px;
+      }
     }
     .position {
       font-size: 20px;
       font-weight: 600;
       color: gray;
+      @media (width < 769px) {
+        font-size: 16px;
+      }
     }
     .date-range {
       font-size: 14px;
@@ -72,8 +79,9 @@ const { company, position, dateRange, description, technologies } = Astro.props;
     font-size: 16px;
     font-weight: 200;
     width: 65%;
-    /* width: 450px;
-    max-width: 70%; */
+    @media (width < 769px) {
+      width: 55%;
+    }
   }
   .pills {
     display: flex;
@@ -82,5 +90,4 @@ const { company, position, dateRange, description, technologies } = Astro.props;
     padding: 0 45px;
     margin-bottom: 30px;
   }
-  /*  */
 </style>

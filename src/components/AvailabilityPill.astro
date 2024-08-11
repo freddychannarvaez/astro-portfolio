@@ -2,9 +2,10 @@
 interface Props {
 	isAvailable: boolean;
   languageCode: string;
+  link?: string;
 }
 
-const { isAvailable, languageCode } = Astro.props;
+const { isAvailable, languageCode, link } = Astro.props;
 
 const textValue = () => {
   switch(languageCode) {
@@ -18,14 +19,13 @@ const textValue = () => {
 }
 const text = textValue
 ---
-<span class={`content-pill 
+<a href={link} class={`content-pill 
   ${isAvailable ? `isAvailable` : `isNotAvailable`}`}>
   {text}
-</span>
+</a>
 <style>
 .content-pill {
     min-width: 150px;
-    /* max-width: 30%; */
     height: 30px;
     border-radius: 50px;
     box-sizing: border-box;
