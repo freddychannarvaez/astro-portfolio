@@ -9,15 +9,29 @@ let { routes } = Astro.props;
   {
     routes.map((route) => (
       route.icon == '' ?
-      <a href={route.link}>{route.title}</a>
+      <a class="link" href={route.link}>{route.title}</a>
       :
-      <a href={route.link}>
+      <a class="link" href={route.link}>
         {route.title}
-        <img src={route.icon}/>
+        <img class="icon" src={route.icon}/>
       </a>
     ))
   }
+  <button id="burger"><img src='menu.svg'></button>
 </header>
+<section id="sidebar">
+  {
+    routes.map((route) => (
+      route.icon == '' ?
+      <a class="mobile-link" href={route.link}>{route.title}</a>
+      :
+      <a class="mobile-link" href={route.link}>
+        {route.title}
+        <img class="icon" src={route.icon}/>
+      </a>
+    ))
+  }
+</section>
 <style>
   .header {
     position: sticky;
@@ -37,49 +51,123 @@ let { routes } = Astro.props;
       background-color: white;
       box-shadow: 1px 1px 1px gray;
     }
-
-    @media (width < 761px) {
+    @media (width < 769px) {
       column-gap: 10;
     }
-    @media (width < 399px) {
-      justify-content: space-between;
+    @media (width < 599px) {
+      justify-content: start;
     }
   }
-  a {
+  .link {
     text-decoration: none;
     color: black;
     font-weight: 500;
     padding: 5px 10px;
     min-width: 70px;
+    &:hover {
+      transform: scale(105%);
+    }
+    &:active {
+      font-weight: 900;
+    }
     
-    @media (width < 761px) {
+    @media (width < 769px) {
       padding: 5px 10px;
       min-width: unset;
     }
+    @media (width < 599px) {
+      display: none;
+    }
   }
-  a:hover {
-    transform: scale(105%);
+  .mobile-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 5px 10px;
+    min-width: 70px;
+    &:hover {
+      transform: scale(105%);
+    }
+    &:active {
+      font-weight: 900;
+    }
   }
-  img {
+  .icon {
     width: 20px;
+  }
+  #burger {
+    width: 40px;
+    height: 40px;
+    display: none;
+    border: unset;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 20px;
+    @media (width < 599px) {
+      display: block;
+    }
+    &:hover {
+      background-color: whitesmoke;
+    }
+    &:active {
+      background-color: lightgray;
+
+    }
+  }
+  #sidebar {
+    display: none;
+    width: 300px;
+    height: calc(100vh - 64px);
+    background-color: whitesmoke;
+    position: sticky;
+    left: 0px;
+    top: 65px;
+    z-index: 100;
+    border-right: 1px solid gray;
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+    gap: 30px;
+    transition: display 0.5s ease-in-out;
+    &.opened {
+      display: flex;
+    }
   }
 </style>
 <script>
 	const $header = document.querySelector("#portfolio-header") as HTMLElement
 	const $sectionElements = document.querySelectorAll("section[data-header-theme='transparent']")
-
+  
 	const intersectionOptions = {
-		root: null,
+    root: null,
 		rootMargin: window.innerWidth > 599 ? '-420px' : '-55%',
 		treshold: 1
 	}
-
+  
 	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			const whiteBackgroundOn = !entry.isIntersecting
+    entries.forEach((entry) => {
+      const whiteBackgroundOn = !entry.isIntersecting
 			$header.classList.toggle('whiteBackground', whiteBackgroundOn)
 		})
 	}, intersectionOptions)
-
+  
 	$sectionElements.forEach((section) => observer.observe(section))
+
+  const menu = document.querySelector("#burger") as HTMLElement
+  const sidebar = document.querySelector("#sidebar") as HTMLElement
+  const links = document.querySelectorAll(".mobile-link")
+
+  let isOpened = false;
+  menu.addEventListener('click', () => {
+    sidebar.classList.toggle('opened', !isOpened)
+    isOpened = !isOpened
+  })
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      sidebar.classList.remove('opened')
+      isOpened = false
+    })
+  })
+  
 </script>

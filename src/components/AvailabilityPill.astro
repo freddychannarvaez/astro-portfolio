@@ -39,15 +39,15 @@ const text = textValue
   }
   .isAvailable {
     background-color: green;
-  }
-  .isAvailable:hover {
-    box-shadow: 0 0 5px green;
+    &:hover {
+      box-shadow: 0 0 5px green;
+    }
   }
   .isNotAvailable {
     background-color: red;
-  }
-  .isNotAvailable:hover {
-    box-shadow: 0 0 5px red;
+    &:hover {
+      box-shadow: 0 0 5px red;
+    }
   }
   @-webkit-keyframes glow {
   from {
