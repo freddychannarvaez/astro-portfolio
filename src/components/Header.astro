@@ -136,38 +136,55 @@ let { routes } = Astro.props;
   }
 </style>
 <script>
-	const $header = document.querySelector("#portfolio-header") as HTMLElement
-	const $sectionElements = document.querySelectorAll("section[data-header-theme='transparent']")
+  const init = () => {
+    const $header = document.querySelector("#portfolio-header") as HTMLElement
+    const $sectionElements = document.querySelectorAll("section[data-header-theme='transparent']")
+    
+    const intersectionOptions = {
+      root: null,
+      rootMargin: '-420px',
+      treshold: 1
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const whiteBackgroundOn = !entry.isIntersecting
+        $header.classList.toggle('whiteBackground', whiteBackgroundOn)
+      })
+    }, intersectionOptions)
   
-	const intersectionOptions = {
-    root: null,
-		rootMargin: window.innerWidth > 599 ? '-420px' : '-55%',
-		treshold: 1
-	}
-  
-	const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const whiteBackgroundOn = !entry.isIntersecting
-			$header.classList.toggle('whiteBackground', whiteBackgroundOn)
-		})
-	}, intersectionOptions)
-  
-	$sectionElements.forEach((section) => observer.observe(section))
+    $sectionElements.forEach((section) => observer.observe(section))
 
-  const menu = document.querySelector("#burger") as HTMLElement
-  const sidebar = document.querySelector("#sidebar") as HTMLElement
-  const links = document.querySelectorAll(".mobile-link")
-
-  let isOpened = false;
-  menu.addEventListener('click', () => {
-    sidebar.classList.toggle('opened', !isOpened)
-    isOpened = !isOpened
-  })
-  links.forEach((link) => {
-    link.addEventListener('click', () => {
+    const menu = document.querySelector("#burger") as HTMLElement
+    const sidebar = document.querySelector("#sidebar") as HTMLElement
+    const links = document.querySelectorAll(".mobile-link")
+  
+    let isOpened = false;
+    menu.addEventListener('click', (e) => {
+      sidebar.classList.toggle('opened', !isOpened)
+      isOpened = !isOpened
+      e.stopPropagation();
+    })
+    menu.addEventListener('keydown', (e) => {
+      if (e.code == 'Escape') {
+        sidebar.classList.remove('opened')
+        isOpened = false
+      }
+    })
+    document.onclick = () => {
       sidebar.classList.remove('opened')
       isOpened = false
+    }
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('opened')
+        isOpened = false
+      })
     })
-  })
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    init()
+  });
+
   
 </script>
