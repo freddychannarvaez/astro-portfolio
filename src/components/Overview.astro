@@ -83,7 +83,15 @@ const { content } = Astro.props;
     margin-top: 24px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     column-gap: 30px;
     font-size: 16px;
+
+    @media (width < 600px) {
+      row-gap: 20px;
+    }
+    @media (width < 414px) {
+      justify-content: center;
+    }
   }
 </style>

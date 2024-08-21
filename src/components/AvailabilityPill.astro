@@ -30,12 +30,12 @@ const text = textValue
     border-radius: 50px;
     box-sizing: border-box;
     text-align: center;
-    box-shadow: 2px 2px 5px gray;
     text-decoration: none;
     color: black;
     font-size: 14px;
     color: white;
     padding: 5px 15px;
+    animation: glow 2s ease-in-out infinite alternate;
   }
   .isAvailable {
     background-color: green;
@@ -49,4 +49,12 @@ const text = textValue
   .isNotAvailable:hover {
     box-shadow: 0 0 5px red;
   }
+  @-webkit-keyframes glow {
+  from {
+    box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px darkgreen, 0 0 5px darkgreen, 0 0 6px darkgreen, 0 0 7px darkgreen, 0 0 9px darkgreen;
+  }
+  to {
+    box-shadow: 0 0 5px #fff, 0 0 7px green, 0 0 10px green, 0 0 12px green, 0 0 15px green, 0 0 17px green, 0 0 20px green;
+  }
+}
 </style>
