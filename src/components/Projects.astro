@@ -23,15 +23,16 @@ const { content } = Astro.props;
 </section>
 <style>
   #projects {
-    margin: 0 15% 50px 15%;
+    margin: 0 15%;
+    padding: 64px 0 0 0;
     display: flex;
     flex-direction: column;
     row-gap: 40px;
     @media (width < 769px) {
-      margin: 0 0 50px 50px;
+      margin: 0 50px;
     }
     @media (width < 414px) {
-      margin: 0 0 20px 50px;
+      margin: 0 20px;
     }
   }
   .icon-title {

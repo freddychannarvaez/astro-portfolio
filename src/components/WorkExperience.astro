@@ -26,10 +26,14 @@ const { title, experience } = Astro.props;
   </div>
 </section>
 <style>
-  section {
-    margin: 0 15% 50px 15%;
+  #experience {
+    margin: 0 15%;
+    padding: 64px 0 0 0;
     @media (width < 769px) {
-      margin: 0 0 50px 40px;
+      margin: 0 50px;
+    }
+    @media (width < 414px) {
+      margin: 0 20px;
     }
   }
   .icon-title {
