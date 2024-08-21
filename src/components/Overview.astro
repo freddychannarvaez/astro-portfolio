@@ -47,6 +47,9 @@ const { content } = Astro.props;
     @media (width < 761px) {
       margin: 0 0 50px 50px;
     }
+    @media (width < 414px) {
+      margin: 0 0 20px 50px;
+    }
   }
   .picture-status {
     display: flex;
@@ -70,6 +73,10 @@ const { content } = Astro.props;
   .title-heading {
     margin: 24px 0 0 0;
     font-size: 40px;
+    
+    @media (width < 600px) {
+      font-size: 30px;
+    }
   }
   .main-description {
     margin-top: 24px;
@@ -84,12 +91,9 @@ const { content } = Astro.props;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 30px;
+    gap: 20px;
     font-size: 16px;
 
-    @media (width < 600px) {
-      row-gap: 20px;
-    }
     @media (width < 414px) {
       justify-content: center;
     }

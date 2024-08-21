@@ -70,7 +70,7 @@ let { routes } = Astro.props;
 
 	const intersectionOptions = {
 		root: null,
-		rootMargin: "-420px",
+		rootMargin: window.innerWidth > 599 ? '-420px' : '-55%',
 		treshold: 1
 	}
 
