@@ -2,16 +2,17 @@
 import ProjectItem from "./ProjectItem.astro";
 
 interface Props {
-  content: any[]
+  title: string;
+  content: any[];
 }
 
-const { content } = Astro.props; 
+const { title, content } = Astro.props; 
 ---
 
 <section id="projects">
   <div class="icon-title">
     <img src="projects.svg">
-    <h2>Projects</h2>
+    <h2>{title}</h2>
   </div>
    {
     content.map((project) => (

@@ -114,7 +114,9 @@ const workContent = {
 		},
 	]
 }
-const projectsContent = [
+const projectsContent = {
+	title: 'Projects',
+	content: [
   {
     title: 'Kinil Kab',
     description: 'Landing page of a bee honey business. Made in Astro. 100% Performance in Google Lighthouse.',
@@ -131,7 +133,7 @@ const projectsContent = [
     image: '/minesweeper.avif',
     technologies: ['react', 'vite']
   },
-]
+]}
 const aboutContent = {
 	title: 'About me',
 	descriptions: [
@@ -145,7 +147,7 @@ const aboutContent = {
 <Layout title='Freddy Chan Portfolio' routes={routes}>
 	<Overview content={overviewContent}></Overview>
 	<WorkExperience title={workContent.title} experience={workContent.experience}></WorkExperience>
-	<Projects content={projectsContent}></Projects>
+	<Projects title={projectsContent.title} content={projectsContent.content}></Projects>
 	<About title={aboutContent.title} description={aboutContent.descriptions}></About>
 </Layout>
 
