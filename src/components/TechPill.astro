@@ -10,212 +10,145 @@ function getTechParams(tech: string): any {
   switch (tech) {
     case 'angular2':
       return {
-      backgroundColor: '#c3002f',
-      borderColor: '#b3b3b3',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#c3002f',
       title: 'Angular 2+'
     }
     case 'angular4':
     return {
-      backgroundColor: '#c3002f',
-      borderColor: '#b3b3b3',
-      shadowColor: 'black',
-      color: 'white',
+      color: 'whi#c3002fte',
       title: 'Angular 4+'
     }
     case 'astro':
       return {
-      backgroundColor: 'unset',
-      backgroundImage: 'linear-gradient(83.21deg, #3245ff, #b845ed)',
-      borderColor: '#3245ff',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#3245ff',
       title: 'Astro'
     }
     case 'react':
       return {
-      backgroundColor: 'black',
-      borderColor: 'white',
-      shadowColor: 'black',
       color: '#61DBFB',
       title: 'React'
     }
     case 'nextjs':
       return {
-      backgroundColor: 'white',
-      borderColor: 'white',
-      shadowColor: 'black',
       color: 'black',
       title: 'Next.js'
     }
     case 'docker':
       return {
-      backgroundColor: '#1D63ED',
-      borderColor: '#17191E',
-      shadowColor: '#00084D',
-      color: 'white',
+      color: '#1D63ED',
       title: 'Docker'
     }
     case 'githubActions':
       return {
-      backgroundColor: 'white',
-      borderColor: '#0366d6',
-      shadowColor: 'gray',
       color: 'black',
       title: 'GitHub Actions'
     }
     case 'jira':
       return {
-      backgroundColor: '#0052CC',
-      borderColor: '#172B4D',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#0052CC',
       title: 'Jira'
     }
     case 'bitbucket':
       return {
-      backgroundColor: '#0357D1',
-      borderColor: '#2684FF',
-      shadowColor: '#253858',
-      color: 'white',
+      color: '#0357D1',
       title: 'BitBucket'
     }
     case 'nodejs':
       return {
-      backgroundColor: '#66cc33',
-      borderColor: 'black',
-      shadowColor: '#336633',
-      color: 'black',
+      color: '#66cc33',
       title: 'Node.js'
     }
     case 'net':
       return {
-      backgroundColor: '#512bd4',
-      borderColor: '#512bd4',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#512bd4',
       title: '.Net'
     }
     case 'mysql':
       return {
-      backgroundColor: '#00758F',
-      borderColor: '#00758F',
-      shadowColor: '#F29111',
-      color: 'white',
+      color: '#00758F',
       title: 'MySQL'
     }
     case 'postgresql':
       return {
-      backgroundColor: '#0064a5',
-      borderColor: 'black',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#0064a5',
       title: 'PostgreSQL'
     }
     case 'gcp':
       return {
-      backgroundColor: 'unset',
-      backgroundImage: 'linear-gradient(to right, #DB4437, #F4B400, #34A853, #4285F4)',
-      borderColor: 'black',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#DB4437',
       title: 'Google Cloud Platform'
     }
     case 'firebase':
       return {
-      backgroundColor: 'unset',
-      backgroundImage: 'linear-gradient(90deg, #FFC400, #DD2C00)',
-      borderColor: '#FF9100',
-      shadowColor: 'black',
-      color: 'black',
+      color: '#DD2C00',
       title: 'Firebase'
     }
     case 'github':
       return {
-      backgroundColor: 'black',
-      borderColor: 'black',
-      shadowColor: 'black',
-      color: 'white',
+      color: 'black',
       title: 'GitHub'
     }
     case 'azure':
       return {
-      backgroundColor: '#0067b8;',
-      borderColor: '#004589',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#0067b8',
       title: 'Azure'
     }
     case 'azureDevops':
       return {
-      backgroundColor: '#0067b8;',
-      borderColor: '#004589',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#0067b8',
       title: 'Azure DevOps'
     }
     case 'javascript':
       return {
-      backgroundColor: '#f7df1e',
-      borderColor: '#f7df1e',
-      shadowColor: 'black',
-      color: 'black',
+      color: '#f7df1e',
       title: 'JavaScript'
     }
     case 'php':
       return {
-      backgroundColor: '#777BB3',
-      borderColor: '#AEB2D5',
-      shadowColor: '#484C89',
-      color: 'black',
+      color: '#777BB3',
       title: 'PHP'
     }
     case 'python':
       return {
-      backgroundColor: '#FFE873',
-      borderColor: '#4B8BBE',
-      shadowColor: '#FFD43B',
-      color: '#306998',
+      color: '#4584b6',
       title: 'Python'
     }
     case 'cypress':
       return {
-      backgroundColor: '#69D3A7',
-      borderColor: '#69D3A7',
-      shadowColor: 'gray',
       color: '#1B1E2E',
       title: 'Cypress'
     }
     case 'sass':
       return {
-      backgroundColor: '#c69',
-      borderColor: 'tggray',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#c69',
       title: 'Sass'
     }
     case 'tailwind':
       return {
-      backgroundColor: '#38bdf8',
-      borderColor: 'gray',
-      shadowColor: 'black',
-      color: 'white',
+      color: '#38bdf8',
       title: 'Tailwind'
+    }
+    case 'vercel':
+      return {
+      color: 'black',
+      title: 'Vercel'
+    }
+    case 'jest':
+      return {
+      color: '#C63D14',
+      title: 'Jest'
+    }
+    case 'vite':
+      return {
+      color: '#3d1663',
+      title: 'Vite'
     }
     default:
       return {}
   }
 }
 ---
-<span class="pill" style=`
-  background-color: ${tech.backgroundColor ?? 'unset'};
-  border: 1px solid ${tech.borderColor ?? 'unset'};
-  box-shadow: 1px 1px 5px ${tech.shadowColor ?? 'unset'};
-  color: ${tech.color ?? 'black'};
-  background-image: ${tech.backgroundImage ?? 'unset'};
-  `
->{tech.title}</span>
+<span class="pill" style=`color: ${tech.color ?? 'unset'};`>{tech.title}</span>
 <style>
   .pill {
     max-width: 80%;
@@ -225,9 +158,7 @@ function getTechParams(tech: string): any {
     cursor: default;
     font-size: 15px;
     font-weight: 500;
-    border-radius: 50px;
-    padding: 0 10px;
-    margin: 5px;
+    margin: 5px 10px;
   }
 
 </style>

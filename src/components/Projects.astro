@@ -1,11 +1,11 @@
 ---
-// interface Props {
-// 	title: string;
-// 	body: string;
-// 	href: string;
-// }
+import ProjectItem from "./ProjectItem.astro";
 
-// const { href, title, body } = Astro.props;
+interface Props {
+  content: any[]
+}
+
+const { content } = Astro.props; 
 ---
 
 <section id="about">
@@ -13,18 +13,26 @@
     <img src="projects.svg">
     <h2>Projects</h2>
   </div>
-  <h3>Coming soon...</h3>
+   {
+    content.map((project) => (
+      <ProjectItem title={project.title} description={project.description}
+        code={project.code} preview={project.preview} image={project.image}
+        technologies={project.technologies}/>
+    ))
+   }
 </section>
 <style>
-  section {
+  #about {
     margin: 50px 15%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
   }
   .icon-title {
     display: flex;
     flex-direction: row;
     align-items: center;
     column-gap: 10px;
-    margin-bottom: 20px;
     h2 {
       font-size: 30px;
       margin: 0;

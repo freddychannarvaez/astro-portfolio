@@ -16,10 +16,10 @@ interface Props {
 
 const { content } = Astro.props;
 ---
-<section id="overview" class="overview">
+<section id="overview" class="overview" data-header-theme='transparent'>
   <div class="picture-status">
     <div class="profile-img">
-      <img src="/profile_picture.avif" />
+      <img src="/profile_picture.avif" alt='Freddy profile image'/>
     </div>
     <AvailabilityPill isAvailable={content.isAvailable!} languageCode={content.languageCode!} link={content.link}/>
   </div>

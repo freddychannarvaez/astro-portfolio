@@ -41,8 +41,10 @@ const workContent = {
 			description: `Development of web pages using Astro. Working on an integration using ERPNext. Looking for AZ-204: Azure Developer certification.`,
 			technologies: [
 				'astro',
-				'github',
+				'vercel',
 				'react',
+				'vite',
+				'github',
 				'python',
 			]
 		},
@@ -106,6 +108,24 @@ const workContent = {
 		},
 	]
 }
+const projectsContent = [
+  {
+    title: 'Kinil Kab',
+    description: 'Landing page of a bee honey business. Made in Astro. 100% Performance in Google Lighthouse.',
+    code: 'https://github.com/freddychannarvaez/kinil-kab-astro',
+    preview: 'https://kinilkab.com.mx',
+    image: '/kinilkab.avif',
+    technologies: ['astro', 'vercel']
+  },
+  {
+    title: 'Minesweeper React',
+    description: 'Game developed in React + Vite. Aiming to demonstrate the use of hooks like useEffect and useState.',
+    code: 'https://github.com/freddychannarvaez/react-minesweeper',
+    preview: '',
+    image: '/minesweeper.avif',
+    technologies: ['react', 'vite']
+  },
+]
 const aboutContent = {
 	title: 'About me',
 	descriptions: [
@@ -119,7 +139,7 @@ const aboutContent = {
 <Layout title='Freddy Chan Portfolio' routes={routes}>
 	<Overview content={overviewContent}></Overview>
 	<WorkExperience title={workContent.title} experience={workContent.experience}></WorkExperience>
-	<!-- <Projects></Projects> -->
+	<Projects content={projectsContent}></Projects>
 	<About title={aboutContent.title} description={aboutContent.descriptions}></About>
 </Layout>
 

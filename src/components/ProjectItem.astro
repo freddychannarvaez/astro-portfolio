@@ -1,0 +1,96 @@
+---
+import ProjectPill from './ProjectPill.astro';
+import TechPill from './TechPill.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	code: string;
+	preview: string;
+	image: string;
+  technologies?: any[];
+}
+
+const { title, description, code, preview, image, technologies} = Astro.props;
+---
+<article class="project-item">
+  <div class="site-img-container">
+    <img src={image} alt={title}>
+  </div>
+  <div class="info">
+    <h2 class="title">{title}</h2>
+    <div class="tech">
+      {
+        technologies?.map((tech) => (
+          <TechPill name={tech}/>
+        ))
+      }
+    </div>
+    <p class="description">{description}</p>
+    <div class="links">
+      <ProjectPill link={code} icon='github.svg' text='Code'/>
+      <ProjectPill link={preview} icon='link.svg' text='Preview'/>
+    </div>
+  </div>
+</article>
+<style>
+.project-item {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+
+  @media (width < 600px) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .site-img-container {
+    width: 350px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      object-fit: cover;
+    }
+    img:hover {
+      transform: scale(1.03);
+      transition: transform 0.3s ease-in;
+    }
+  }
+
+  .info {
+    display: inherit;
+    flex-direction: column;
+    row-gap: 10px;
+    max-width: 45%;
+
+    @media (width < 600px) {
+      max-width: 350px;
+      align-items: center;
+    }
+    
+    .title {
+      margin: 0;
+      font-size: 26px;
+    }
+    .description {
+      margin-top: 0;
+      font-size: 16px;
+    }
+    .tech {
+      display: flex;
+      flex-direction: row;
+    }
+    .links {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+}
+</style>

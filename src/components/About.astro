@@ -9,7 +9,7 @@ const { title, description } = Astro.props;
 
 <section id="about">
   <div class="icon-title">
-    <img src="about.svg">
+    <img src="about.svg" alt={title}>
     <h2>{title}</h2>
   </div>
   <div class="content">
@@ -21,7 +21,7 @@ const { title, description } = Astro.props;
       }
     </div>
     <div class="img">
-      <img src="/profile_picture.avif">
+      <img src="/profile_picture.avif" alt='Freddy image'>
     </div>
   </div>
 </section>

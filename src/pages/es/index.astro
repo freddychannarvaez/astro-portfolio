@@ -106,6 +106,25 @@ const workContent = {
 		},
 	]
 }
+const projectsContent = [
+  {
+    title: 'Kinil Kab',
+    description: 'Landing page para un negocio de venta de miel de abeja. Hecho con Astro. 100% de rendimiento en Google Lighthouse.',
+    code: 'https://github.com/freddychannarvaez/kinil-kab-astro',
+    preview: 'https://kinilkab.com.mx',
+    image: '/kinilkab.avif',
+    technologies: ['astro', 'vercel']
+  },
+  {
+    title: 'Minesweeper React',
+
+    description: 'Juego desarrollado en React + Vite. La idea es demostrar cómo funcionan los hooks tal como useEffect y useState.',
+    code: 'https://github.com/freddychannarvaez/react-minesweeper',
+    preview: '',
+    image: '/minesweeper.avif',
+    technologies: ['react', 'vite']
+  },
+]
 const aboutContent = {
 	title: 'Acerca de mí',
 	descriptions: [
@@ -119,7 +138,7 @@ const aboutContent = {
 <Layout title="Freddy Chan Portfolio" routes={routes}>
 	<Overview content={overviewContent}></Overview>
 	<WorkExperience title={workContent.title} experience={workContent.experience}></WorkExperience>
-	<!-- <Projects></Projects> -->
+	<Projects content={projectsContent}></Projects>
 	<About title={aboutContent.title} description={aboutContent.descriptions}></About>
 </Layout>
 

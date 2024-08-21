@@ -5,7 +5,7 @@ interface Props {
 
 let { routes } = Astro.props;
 ---
-<section class="header">
+<header class="header" id="portfolio-header">
   {
     routes.map((route) => (
       route.icon == '' ?
@@ -17,21 +17,26 @@ let { routes } = Astro.props;
       </a>
     ))
   }
-</section>
+</header>
 <style>
   .header {
+    position: sticky;
+    top: 0px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     column-gap: 20px;
-    /* width: 100%; */
     height: 64px;
     background-color: transparent;
-    position: sticky;
-    top: 0px;
+    transition: background-color 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
     z-index: 10;
+    
+    &.whiteBackground {
+      background-color: white;
+      box-shadow: 1px 1px 1px gray;
+    }
 
     @media (width < 761px) {
       column-gap: 10;
@@ -40,22 +45,11 @@ let { routes } = Astro.props;
       justify-content: space-between;
     }
   }
-  .header:hover {
-    background-color: white;
-    transition: 0.3s ease;
-
-    a {
-      box-shadow: 2px 2px 5px gray;
-      transition: 0.7s ease;
-    }
-  }
   a {
-    border-radius: 50px;
     text-decoration: none;
     color: black;
     font-weight: 500;
     padding: 5px 10px;
-    background-color: white;
     min-width: 70px;
     
     @media (width < 761px) {
@@ -65,9 +59,27 @@ let { routes } = Astro.props;
   }
   a:hover {
     transform: scale(105%);
-    box-shadow: 1px 1px 5px black !important;
   }
   img {
     width: 20px;
   }
 </style>
+<script>
+	const $header = document.querySelector("#portfolio-header") as HTMLElement
+	const $sectionElements = document.querySelectorAll("section[data-header-theme='transparent']")
+
+	const intersectionOptions = {
+		root: null,
+		rootMargin: "-420px",
+		treshold: 1
+	}
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			const whiteBackgroundOn = !entry.isIntersecting
+			$header.classList.toggle('whiteBackground', whiteBackgroundOn)
+		})
+	}, intersectionOptions)
+
+	$sectionElements.forEach((section) => observer.observe(section))
+</script>

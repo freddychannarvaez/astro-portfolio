@@ -1,0 +1,37 @@
+---
+interface Props {
+	link: string;
+  icon: string;
+  text: string;
+}
+
+const { link, icon, text } = Astro.props;
+---
+<a href={link} target="_blank" class="pill">
+  <img src={icon}>
+  {text}
+</a>
+<style>
+.pill {
+  min-width: 120px;
+  max-width: 30%;
+  height: 36px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 2px gray;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: gainsboro;
+}
+.pill:hover {
+  box-shadow: unset;
+}
+</style>
