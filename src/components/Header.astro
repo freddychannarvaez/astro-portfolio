@@ -13,11 +13,11 @@ let { routes } = Astro.props;
       :
       <a class="link" href={route.link}>
         {route.title}
-        <img class="icon" src={route.icon}/>
+        <img class="icon" src={route.icon} alt="flag"/>
       </a>
     ))
   }
-  <button id="burger"><img src='menu.svg'></button>
+  <button id="burger" name="burger-menu-button" ><img src='menu.svg'></button>
 </header>
 <section id="sidebar">
   {
@@ -27,7 +27,7 @@ let { routes } = Astro.props;
       :
       <a class="mobile-link" href={route.link}>
         {route.title}
-        <img class="icon" src={route.icon}/>
+        <img class="icon" src={route.icon} alt="flag"/>
       </a>
     ))
   }

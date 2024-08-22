@@ -8,7 +8,7 @@ interface Props {
 const { link, icon, text } = Astro.props;
 ---
 <a href={link} target="_blank" class="contact">
-  <img src={icon}>
+  <img src={icon} alt={`${text} icon`}>
   {text}
 </a>
 <style>
