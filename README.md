@@ -9,7 +9,7 @@
   To clone the repo:
  ```
  cd project_folder
- git clone https://github.com/freddychannarvaez/react-minesweeper.git
+ git clone https://github.com/freddychannarvaez/astro-portfolio.git
  ```
  To install dependencies inside project_folder:
  ```
