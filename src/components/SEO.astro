@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+const { title, description, image = 'https://www.freddychannarvaez.com/profile_picture.avif' } = Astro.props;
+---
+<link rel="canonical" href="freddychannarvaez.com" />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content="freddychannarvaez.com" />
+<meta property="og:site_name" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
