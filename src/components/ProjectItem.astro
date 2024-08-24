@@ -28,8 +28,14 @@ const { title, description, code, preview, image, technologies} = Astro.props;
     </div>
     <p class="description">{description}</p>
     <div class="links">
-      <ProjectPill link={code} icon='github.svg' text='Code'/>
-      <ProjectPill link={preview} icon='link.svg' text='Preview'/>
+      {
+        code != '' &&
+        <ProjectPill link={code} icon='github.svg' text='Code'/>
+      }
+      {
+        preview != '' &&
+        <ProjectPill link={preview} icon='link.svg' text='Preview'/>
+      }
     </div>
   </div>
 </article>
@@ -73,7 +79,7 @@ const { title, description, code, preview, image, technologies} = Astro.props;
 
     @media (width < 600px) {
       max-width: 350px;
-      align-items: center;
+      align-items: start;
     }
     
     .title {
