@@ -34,5 +34,15 @@ const { title, routes } = Astro.props;
 	}
 	body {
 		margin: 0;
+		section {
+    	margin: 0 30%;
+
+			@media (width < 1920px) {
+				margin: 0 25%;
+			}
+			@media (width < 1200px) {
+				margin: 0 15%;
+			}
+		}
 	}
 </style>
