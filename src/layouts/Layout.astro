@@ -4,16 +4,20 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import SEO from '../components/SEO.astro';
 import '@fontsource-variable/noto-sans';
+import { getLangFromUrl, useTranslations, getRoutes } from '../i18n/utils';
+import { ui } from '../i18n/ui';
 interface Props {
 	title: string;
-	routes: any[];
 }
+const { title } = Astro.props;
 
-const { title, routes } = Astro.props;
+const { currentLocale } = Astro;
+const lang = getLangFromUrl(Astro.url);
+const routes = getRoutes(lang)
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLocale}>
 	<head>
 		<SEO title='Freddy Chan Narvaez Portfolio' description='About Freddy`s work and projects'/>
 		<meta charset="UTF-8" />
@@ -22,7 +26,7 @@ const { title, routes } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions/>
 	</head>
-	<Header routes={routes}></Header>
+	<Header routes={routes()}></Header>
 	<body>
 		<slot />
 	</body>

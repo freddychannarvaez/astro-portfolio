@@ -1,0 +1,132 @@
+{
+  "overviewContent" : {
+    "picture": "/profile_picture.avif",
+    "isAvailable": true,
+    "languageCode": "en",
+    "link": "mailto:freddy.chan.narvaez@gmail.com",
+    "titleHeading": "Hi, I'm Freddy Chan Narvaez",
+    "description": "+7 years of experience. Mechatronics Engineer and Fullstack Developer from Mexico. I love turning problems into elegant solutions.",
+    "pills": [
+    {
+      "link": "https://github.com/freddychannarvaez",
+      "icon": "/github.svg",
+      "text": "Github"
+    },
+    {
+      "link": "https://linkedin.com/in/freddy-chan-narvaez",
+      "icon": "/linkedin.svg",
+      "text": "LinkedIn"
+    },
+    {
+      "link": "mailto:freddy.chan.narvaez@gmail.com",
+      "icon": "/email.svg",
+      "text": "Mail"
+    }
+  ]
+  },
+  "workContent" : {
+    "title": "Working Experience",
+    "experience": [
+      {
+        "company": "Freelance",
+        "position": "Fullstack Developer",
+        "dateRange": "Jul 2023 - Now",
+        "description": "Development of web pages using Astro. Working on an integration using ERPNext. Looking for AZ-204: Azure Developer certification.",
+        "technologies": [
+          "astro",
+          "vercel",
+          "react",
+          "vite",
+          "github",
+          "python"
+        ]
+      },
+      {
+        "company": "Accion Labs",
+        "position": "Fullstack Developer",
+        "dateRange": "Jul 2022 - Jul 2023",
+        "description": "US based client on Marketing business. Reduced team velocity metrics. Promoted to coordinate the dev team. Helping team to transition from Waterfall to Agile.",
+        "technologies": [
+          "react",
+          "nextjs",
+          "tailwind",
+          "docker",
+          "github",
+          "githubActions",
+          "cypress"
+        ]
+      },
+      {
+        "company": "Softtek",
+        "position": "Frontend Developer",
+        "dateRange": "Jul 2021 - Jul 2022",
+        "description": "US based client on Real Estate business. Development and maintenance of an internal web platform. Work within the SCRUM framework. Certified in AZ-900: Azure Fundamentals.",
+        "technologies": [
+          "angular4",
+          "jira",
+          "bitbucket",
+          "azure"
+        ]
+      },
+      {
+        "company": "Freelance",
+        "position": "Fullstack Developer",
+        "dateRange": "Oct 2020 - Jul 2021",
+        "description": "Development of web sites and applications using mainly Angular, Google Cloud Functions (Node.js) and Firebase. UI/UX creation and improvement.",
+        "technologies": [
+          "angular4",
+          "sass",
+          "postgresql",
+          "javascript",
+          "firebase",
+          "nodejs",
+          "gcp",
+          "php"
+        ]
+      },
+      {
+        "company": "Ramm Alvarez Software Studio",
+        "position": "Fullstack Developer",
+        "dateRange": "Apr 2017 - Oct 2020",
+        "description": "Work in +20 projects using different technologies. Development of web applications and pages. Database modeling. Presentation of progress and projects with clients. Creation of Rest APIs for integrations with existing software.",
+        "technologies": [
+          "angular2",
+          "nodejs",
+          "net",
+          "mysql",
+          "gcp",
+          "firebase",
+          "azureDevops"
+        ]
+      }
+    ]
+  },
+  "projectsContent" : {
+    "title": "Projects",
+    "content": [
+    {
+      "title": "Kinil Kab",
+      "description": "Landing page of a bee honey business. Made in Astro. 100% Performance in Google Lighthouse.",
+      "code": "https://github.com/freddychannarvaez/kinil-kab-astro",
+      "preview": "https://kinilkab.com.mx",
+      "image": "/kinilkab.avif",
+      "technologies": ["astro", "vercel"]
+    },
+    {
+      "title": "Minesweeper Clone",
+      "description": "Game developed in React + Vite. Aiming to demonstrate the use of hooks like useEffect and useState.",
+      "code": "https://github.com/freddychannarvaez/react-minesweeper",
+      "preview": "https://minesweeper-clone-react.vercel.app/",
+      "image": "/minesweeper.avif",
+      "technologies": ["react", "vite"] 
+    }
+  ]},
+  "aboutContent" : {
+    "title": "About me",
+    "descriptions": [
+      "My name is Freddy. I turned my love for math and problem solving into software development. I have a strong background working with several JavaScript frameworks.",
+      "I'm always eager to explore new technologies and methodologies. As a matter of fact, I'm currently learning a modern framework for building fast and optimized websites (Astro) and I want to see how far I can go with it.",
+      "I am also an enthusiastic person about learning languages. Along my way I have learned English, French, Italian and I'm currently learning Dutch."
+    ]
+  }
+}

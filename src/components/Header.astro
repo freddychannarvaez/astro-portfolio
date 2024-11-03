@@ -1,36 +1,48 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { languages } from '../i18n/ui';
 interface Props {
 	routes: any[];
 }
 
 let { routes } = Astro.props;
+const currentLocale = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLocale);
 ---
 <header class="header" id="portfolio-header">
   {
     routes.map((route) => (
-      route.icon == '' ?
-      <a class="link" href={route.link}>{route.title}</a>
-      :
-      <a class="link" href={route.link}>
-        {route.title}
-        <img class="flag" src={route.icon} alt="flag"/>
-      </a>
+      <a class="link" href={t(route).link}>{t(route).title}</a>
     ))
   }
+  <div>
+    {
+      languages.filter((lang) => lang.code !== currentLocale).map((lang) => (
+        <a class="link language" href={lang.link}>
+          {lang.code}
+          <img class="flag" src={lang.icon} alt="flag"/>
+        </a>
+      ))
+    }
+  </div>
   <button id="burger-menu-button" name="burger-menu-button" ><img class="icon" src='menu.svg' alt="burger icon"></button>
 </header>
 <section id="sidebar">
   {
     routes.map((route) => (
-      route.icon == '' ?
-      <a class="mobile-link" href={route.link}>{route.title}</a>
-      :
-      <a class="mobile-link" href={route.link}>
-        {route.title}
-        <img class="flag" src={route.icon} alt="flag"/>
-      </a>
+      <a class="mobile-link" href={t(route).link}>{t(route).title}</a>
     ))
   }
+  <div>
+    {
+      languages.filter((lang) => lang.code !== currentLocale).map((lang) => (
+        <a class="mobile-link language" href={lang.link}>
+          {lang.code}
+          <img class="flag" src={lang.icon} alt="flag"/>
+        </a>
+      ))
+    }
+  </div>
 </section>
 <style>
   .header {
@@ -91,6 +103,9 @@ let { routes } = Astro.props;
     &:active {
       font-weight: 900;
     }
+  }
+  .language {
+    text-transform: uppercase;
   }
   .icon {
     width: 24px;

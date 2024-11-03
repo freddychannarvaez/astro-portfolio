@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Overview from '../components/Overview.astro';
+import WorkExperience from '../components/WorkExperience.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import { getI18N } from "../i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+---
+
+<Layout title='Freddy Chan Portfolio'>
+	<Overview content={i18n.overviewContent}></Overview>
+	<WorkExperience title={i18n.workContent.title} experience={i18n.workContent.experience}></WorkExperience>
+	<Projects title={i18n.projectsContent.title} content={i18n.projectsContent.content}></Projects>
+	<About title={i18n.aboutContent.title} description={i18n.aboutContent.descriptions}></About>
+</Layout>
+
+<style is:global>
+	main {
+		margin: auto;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>
