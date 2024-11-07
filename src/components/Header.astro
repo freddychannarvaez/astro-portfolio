@@ -15,7 +15,7 @@ const t = useTranslations(currentLocale);
       <a class="link" href={t(route).link}>{t(route).title}</a>
     ))
   }
-  <div>
+  <div class="languages">
     {
       languages.filter((lang) => lang.code !== currentLocale).map((lang) => (
         <a class="link language" href={lang.link}>
@@ -33,7 +33,7 @@ const t = useTranslations(currentLocale);
       <a class="mobile-link" href={t(route).link}>{t(route).title}</a>
     ))
   }
-  <div>
+  <div class="mobile-languages">
     {
       languages.filter((lang) => lang.code !== currentLocale).map((lang) => (
         <a class="mobile-link language" href={lang.link}>
@@ -104,6 +104,16 @@ const t = useTranslations(currentLocale);
       font-weight: 900;
     }
   }
+  .languages {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .mobile-languages {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
   .language {
     text-transform: uppercase;
   }
@@ -149,6 +159,8 @@ const t = useTranslations(currentLocale);
     justify-content: start;
     gap: 30px;
     transition: display 0.5s ease-in-out;
+    margin-left: unset;
+    padding-top: 30px;
     &.opened {
       display: flex;
     }
