@@ -119,6 +119,14 @@
       "preview": "https://minesweeper-clone-react.vercel.app/",
       "image": "/minesweeper.avif",
       "technologies": ["react", "vite"] 
+    },
+    {
+      "title": "Speed Memory",
+      "description": "Developed using React.",
+      "code": "https://github.com/freddychannarvaez/speed-memory-clone",
+      "preview": "https://speed-memory-clone.vercel.app/",
+      "image": "/speed.avif",
+      "technologies": ["react", "vite"] 
     }
   ]},
   "aboutContent" : {
