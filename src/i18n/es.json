@@ -31,7 +31,7 @@
         "company": "Freelance",
         "position": "Desarrollador Fullstack",
         "dateRange": "Jul 2023 - Presente",
-        "description": "Desarrollo de páginas web usando Astro. Trabajando en la integración de ERPNext. Buscando obtener la certificación AZ-204: Azure Developer.",
+        "description": "Desarrollo de páginas web usando Astro. Actualmente trabajando en el desarrollo de una plataforma en Angular 18, basada en un producto existente.",
         "technologies": [
           "astro",
           "vercel",
